@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Surprise 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdce8, #ff9bb3);
+    color: white;
+    text-align: center;
+}
+
+/* MAIN LAYOUT */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* 📸 VERTICAL PHOTOS */
+.photo-sequence {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.fade-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 25px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards, float 4s ease-in-out infinite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.fade-img:nth-child(1){animation-delay:0.5s;}
+.fade-img:nth-child(2){animation-delay:1.5s;}
+.fade-img:nth-child(3){animation-delay:2.5s;}
+
+@keyframes fadeUp {
+    to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+@media(max-width: 500px){
+    .fade-img{
+        width: 80vw;
+        height: 80vw;
+    }
+}
+/* 🎂 CAKE SECTION */
+#cakeSection {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* HEADING SPACING */
+#cakeSection h1 {
+    margin-bottom: 15px;
+}
+
+/* 🎂 DETAILED CAKE */
+.cake {
+    position: relative;
+    width: 180px;
+    height: 140px;
+}
+
+/* layers */
+.layer {
+    position: absolute;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: inset 0 -5px rgba(0,0,0,0.15);
+}
+
+.layer1 {
+    height: 70px;
+    background: linear-gradient(#ff4d88, #e6005c);
+    bottom: 0;
+}
+
+.layer2 {
+    height: 45px;
+    background: linear-gradient(#ff7aa5, #ff4d88);
+    bottom: 70px;
+}
+
+/* icing drip */
+.icing {
+    position: absolute;
+    width: 100%;
+    height: 18px;
+    background: white;
+    bottom: 115px;
+    border-radius: 10px;
+}
+
+/* drip effect */
+.icing::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    background: white;
+    left: 20px;
+    top: 10px;
+    border-radius: 50%;
+    box-shadow: 40px 0 white, 80px 0 white, 120px 0 white;
+}
+
+/* candles */
+.candle {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: repeating-linear-gradient(
+        45deg,
+        white,
+        white 5px,
+        pink 5px,
+        pink 10px
+    );
+    top: -30px;
+}
+
+.c1 { left: 25%; }
+.c2 { left: 50%; }
+.c3 { left: 75%; }
+
+.flame {
+    width: 10px;
+    height: 14px;
+    background: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: -14px;
+    animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+    50% { opacity:0.6; transform:scale(0.85); }
+}
+
+/* BUTTON SPACING FIX */
+button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #ff4d88;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 💖 CUTE BIG POPUP */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    width: 85%;
+    max-width: 400px;
+    padding: 40px 25px;
+    border-radius: 30px;
+    
+    background: linear-gradient(135deg, #ff4d88, #ff85a2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    
+    text-align: center;
+    color: white;
+    
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+/* SHOW ANIMATION */
+#popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* TEXT STYLING */
+#popup h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#popup p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+#popup {
+    position: fixed;
+    overflow: hidden; /* IMPORTANT */
+}
+/* 💗 FLOATING HEARTS */
+.heart {
+    position: absolute;
+    bottom: -10px;
+    font-size: 18px;
+    animation: floatHeart linear forwards;
+    opacity: 1;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-250px) scale(1.5);
+        opacity: 0;
+    }
+}
+/* CONFETTI */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    top: 0;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- PHOTOS -->
+    <div class="photo-sequence">
+        <img src="img5.jpg" class="fade-img">
+        <img src="img6.jpg" class="fade-img">
+        <img src="img7.jpg" class="fade-img">
+    </div>
+
+    <!-- CAKE -->
+    <div id="cakeSection">
+        <h1>Make a Wish 🎂</h1>
+
+        <div class="cake">
+            <div class="layer layer1"></div>
+            <div class="layer layer2"></div>
+            <div class="icing"></div>
+
+            <div class="candle c1"><div class="flame"></div></div>
+            <div class="candle c2"><div class="flame"></div></div>
+            <div class="candle c3"><div class="flame"></div></div>
+        </div>
+
+        <button onclick="blowCandles()">Blow Candles 💨</button>
+    </div>
+
+</div>
+
+<div id="popup">
+    <h1>Happy Birthday my Princess 💖</h1>
+    <p>keep smiling, i love you everyday more than yesterday ✨</p>
+</div>
+
+<script>
+setTimeout(() => {
+    document.querySelector('.photo-sequence').style.display = 'none';
+    document.getElementById('cakeSection').style.display = 'flex';
+}, 4500);
+
+function blowCandles() {
+
+    // 1. BLOW CANDLES FIRST
+    document.querySelectorAll(".flame").forEach(f => {
+        f.style.transition = "0.5s";
+        f.style.opacity = "0";
+        f.style.transform = "scale(0)";
+    });
+
+    // 2. WAIT (build moment)
+    setTimeout(() => {
+
+        // SHOW POPUP
+        document.getElementById("popup").classList.add("show");
+
+        // 🎉 CONFETTI
+        for(let i=0;i<90;i++){
+            let c=document.createElement("div");
+            c.classList.add("confetti");
+            c.style.left=Math.random()*100+"vw";
+            c.style.background=`hsl(${Math.random()*360},100%,75%)`;
+            document.body.appendChild(c);
+
+            setTimeout(()=>c.remove(),3000);
+        }
+
+        // 💗 HEARTS
+        for(let i=0;i<25;i++){
+            let h=document.createElement("div");
+            h.className="heart";
+            h.innerHTML="💖";
+
+            h.style.left=Math.random()*100+"%";
+            h.style.animationDuration=(2+Math.random()*2)+"s";
+
+            document.getElementById("popup").appendChild(h);
+
+            setTimeout(()=>h.remove(),4000);
+        }
+
+    }, 1200); // delay after blowing
+}
+// 💗 HEARTS EFFECT (FIXED)
+for(let i=0;i<25;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+
+    h.style.left=Math.random()*100+"%";
+    h.style.animationDuration=(2+Math.random()*2)+"s";
+    h.style.animationDelay=(Math.random()*1)+"s";
+
+    document.getElementById("popup").appendChild(h);
+
+    setTimeout(()=>h.remove(),4000);
+}
+</script>
+
+</body>
+</html>

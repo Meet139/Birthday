@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdce8, #ff9bb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    max-width: 90%;
+    box-shadow: 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+/* TEXT */
+h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    animation: fadeIn 1.5s ease;
+}
+
+p {
+    color: white;
+    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: fadeIn 2s ease;
+}
+
+/* HEARTS */
+.heart {
+    position: absolute;
+    color: pink;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+/* NEXT BUTTON */
+.next-btn {
+    position:center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.next-btn button {
+    background: #ff4d88;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday darling 💖</h1>
+    <p>
+        I don’t say this enough…<br><br>
+        But you really mean a lot to me.<br><br>
+        You are myh baby girl .<br><br>
+        have the happiest birthday ever.<br><br>
+        i know u are strong girl, I believe in you .<br><br>
+        i lovee youuhhh mari saslii 🐰
+    </p>
+</div>
+<!-- NEXT -->
+<div class="next-btn">
+    <button onclick="nextPage()">Continue 💌</button>
+</div>
+<audio id="music" loop>
+    <source src="song.m4a" type="audio/mpeg">
+</audio>
+<script>
+// CREATE FLOATING HEARTS
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 400);
+const music = document.getElementById("music");
+
+// Check if music was playing before
+if (localStorage.getItem("musicPlaying") === "true") {
+    music.play().catch(() => {});
+}
+function nextPage() {
+  window.location.href = "final.html";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/* IMPORT FONT (this was missing) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PAGE BACKGROUNDS */
+.page1 {
+    background: linear-gradient(135deg, #ffdce8, #ffc0cb);
+}
+
+.page2 {
+    background: linear-gradient(135deg, #ffb6c1, #ff8fb1);
+}
+
+/* CENTER CONTAINER */
+.container {
+    padding: 20px;
+    max-width: 90%;
+}
+
+/* TEXT */
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.subtext {
+    color: white;
+    opacity: 0.85;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* BUTTON BASE */
+button {
+    border: none;
+    padding: 12px 22px;
+    margin: 8px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* YES BUTTON */
+.yes {
+    background: #ff4d88;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 77, 136, 0.6);
+}
+
+.yes:hover {
+    transform: scale(1.08);
+}
+
+/* NO BUTTON */
+.no {
+    background: rgba(255, 255, 255, 0.6);
+    color: #ff4d88;
+}
+
+/* BACK BUTTON */
+.back {
+    background: #ff4d88;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 77, 136, 0.6);
+}
+
+.back:hover {
+    transform: scale(1.08);
+}
+
+/* CUTE ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffdce8, #ffc0cb);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* CONTAINER */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    max-width: 90%;
+    box-shadow: 0 0 25px rgba(255, 105, 135, 0.3);
+}
+
+/* TEXT */
+h1 {
+    color: white;
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease;
+}
+
+.subtext {
+    color: white;
+    opacity: 0.85;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    min-height: 40px;
+}
+
+/* BUTTON */
+button {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: #ff4d88;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 136, 0.6);
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
